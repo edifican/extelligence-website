@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   noindex?: boolean;
+  hideHeaderUntilScroll?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Extelligence — intelligent solutions for a smarter tomorrow.',
   ogImage = '/og-default.png',
   noindex = false,
+  hideHeaderUntilScroll = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -54,8 +56,8 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <!-- Per-page head additions (scripts, preloads, etc.) -->
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-white text-gray-900 flex flex-col antialiased">
-    <Header />
+  <body class="min-h-screen bg-black text-white flex flex-col antialiased">
+    <Header hideUntilScroll={hideHeaderUntilScroll} />
     <main class="flex-1">
       <slot />
     </main>
