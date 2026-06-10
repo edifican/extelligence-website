@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const values = [
+  {
+    title: 'Clarity over complexity',
+    body: 'We believe intelligence should simplify, not overwhelm. Every tool we build is designed to make the difficult feel obvious.',
+  },
+  {
+    title: 'Outcomes over outputs',
+    body: "Reports and dashboards are a means to an end. We measure success by the decisions our clients make, not the data they consume.",
+  },
+  {
+    title: 'Trust through transparency',
+    body: 'We show our work. Every recommendation is explainable, every model auditable, every result reproducible.',
+  },
+  {
+    title: 'Partnership over project',
+    body: "We embed with your team, learn your domain, and stay accountable long after delivery. We succeed when you succeed.",
+  },
+];
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about Extelligence — our mission, values, and the team behind our intelligent solutions."
+>
+  <!-- Page header -->
+  <section class="bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <span class="inline-block mb-4 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium">
+        Our story
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Built for the people<br class="hidden md:block" /> making the calls
+      </h1>
+      <p class="max-w-2xl text-lg text-gray-600 leading-relaxed">
+        Extelligence was founded on a simple observation: organisations were drowning in data but starving for insight. We set out to change that — combining analytical rigour with human-centred design to put real intelligence in the hands of decision-makers.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-16 bg-white">
+    <div class="mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our mission</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+          To make intelligent decision-making accessible to every organisation — regardless of size, sector, or technical sophistication.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          We believe that the organisations making the best decisions will shape the future. Our job is to give them the edge — through better information, better tools, and a relentless focus on what actually moves the needle.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 p-10 text-white">
+        <blockquote class="text-xl font-medium leading-relaxed italic mb-6">
+          "Intelligence isn't just about having the data. It's about knowing which question to ask and having the confidence to act on the answer."
+        </blockquote>
+        <p class="text-indigo-200 text-sm font-medium">— Extelligence founding principle</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What we stand for</h2>
+        <p class="text-gray-600 max-w-xl mx-auto text-lg">
+          Four principles that guide every engagement, every hire, and every line of code.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {values.map(({ title, body }, i) => (
+          <div class="bg-white rounded-2xl border border-gray-100 p-8">
+            <span class="text-2xl font-bold text-indigo-200 mb-3 block">0{i + 1}</span>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+            <p class="text-gray-600 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Want to know more?</h2>
+      <p class="text-gray-600 text-lg mb-8">
+        We'd love to hear about what you're working on.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-8 py-3.5 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors"
+      >
+        Get in touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>

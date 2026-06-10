@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Home"
+  description="Extelligence helps organisations unlock the power of intelligent systems — faster insights, smarter decisions, better outcomes."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-24 md:py-36">
+    <div class="mx-auto max-w-6xl px-6 text-center">
+      <span class="inline-block mb-4 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium">
+        Intelligent by design
+      </span>
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        Decisions powered by<br class="hidden md:block" />
+        <span class="text-indigo-600">real intelligence</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mb-10">
+        Extelligence helps organisations turn complex data into clear, actionable insight — so every decision is faster, smarter, and more confident.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="px-8 py-3.5 rounded-lg bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-700 transition-colors shadow-sm"
+        >
+          Get started
+        </a>
+        <a
+          href="/about"
+          class="px-8 py-3.5 rounded-lg border border-gray-300 text-gray-700 font-semibold text-base hover:bg-gray-50 transition-colors"
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative blobs -->
+    <div aria-hidden="true" class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl pointer-events-none"></div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Extelligence?</h2>
+        <p class="max-w-xl mx-auto text-gray-600 text-lg">
+          We combine deep domain expertise with cutting-edge technology to deliver intelligence that drives real results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: '⚡',
+            title: 'Speed to insight',
+            body: 'Turn months of analysis into hours. Our systems surface what matters, fast.',
+          },
+          {
+            icon: '🎯',
+            title: 'Decision precision',
+            body: 'Remove ambiguity at every level. Data-backed confidence from the boardroom to the front line.',
+          },
+          {
+            icon: '🔒',
+            title: 'Secure & compliant',
+            body: 'Built with privacy-first architecture and enterprise-grade security at every layer.',
+          },
+        ].map(({ icon, title, body }) => (
+          <div class="rounded-2xl border border-gray-100 bg-gray-50 p-8 hover:shadow-md transition-shadow">
+            <span class="text-3xl mb-4 block">{icon}</span>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+            <p class="text-gray-600 leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof / stats -->
+  <section class="py-16 bg-indigo-600">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {[
+          { value: '200+', label: 'Clients served' },
+          { value: '40%', label: 'Avg. cost reduction' },
+          { value: '10×', label: 'Faster reporting' },
+          { value: '99.9%', label: 'Platform uptime' },
+        ].map(({ value, label }) => (
+          <div>
+            <p class="text-4xl font-bold text-white mb-1">{value}</p>
+            <p class="text-indigo-200 text-sm">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Ready to work smarter?
+      </h2>
+      <p class="text-gray-600 text-lg mb-8">
+        Let's talk about how Extelligence can transform the way your organisation makes decisions.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-8 py-3.5 rounded-lg bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-700 transition-colors shadow-sm"
+      >
+        Get in touch today
+      </a>
+    </div>
+  </section>
+</BaseLayout>
