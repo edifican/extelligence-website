@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.extelligence.com',
+  site: 'https://buildingextelligence.com',
   output: 'static',
   vite: {
     plugins: [tailwindcss()],
