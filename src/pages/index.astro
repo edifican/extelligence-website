@@ -92,7 +92,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── 4. EARLY ACCESS FORM ─────────────────────────────────────────────── -->
-  <section id="early-access" class="bg-white py-24 px-6">
+  <section id="early-access" class="bg-white py-24 px-6 scroll-mt-16 min-h-[calc(100dvh-4rem)]">
     <div class="mx-auto max-w-xl text-center">
       <p class="text-cyan-600 text-sm font-semibold uppercase tracking-widest mb-4">Early Access</p>
 
@@ -104,4 +104,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       ></div>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      if (location.hash !== '#early-access') return;
+      const el = document.getElementById('early-access');
+      if (!el) return;
+
+      const go = () => el.scrollIntoView({ block: 'start', behavior: 'auto' });
+
+      // Native hash scroll can run before layout / sticky header settle, and
+      // html.scroll-smooth can leave the jump incomplete on first paint.
+      requestAnimationFrame(go);
+      window.addEventListener('load', go, { once: true });
+
+      const frame = el.querySelector('.hs-form-frame');
+      if (!frame) return;
+      const obs = new MutationObserver(() => {
+        if (frame.childElementCount > 0) {
+          go();
+          obs.disconnect();
+        }
+      });
+      obs.observe(frame, { childList: true, subtree: true });
+    })();
+  </script>
 </BaseLayout>
